@@ -1,0 +1,44 @@
+{
+  "name": "reflectionsapi",
+  "version": "1.0.0",
+  "description": "A Node RESTful API built on ES-6, compiled with babel",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tolumide-ng/ReflectionsAPI.git"
+  },
+  "keywords": [
+    "NODE.JS",
+    "RESTful",
+    "EXPRESS",
+    "BABEL",
+    "ES-6"
+  ],
+  "author": "tolumide",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tolumide-ng/ReflectionsAPI/issues"
+  },
+  "homepage": "https://github.com/tolumide-ng/ReflectionsAPI#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "istanbul": "^0.4.5",
+    "moment": "^2.23.0",
+    "nyc": "^13.1.0",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-watch": "^2.0.8",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0"
+  }
+}
