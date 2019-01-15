@@ -4,7 +4,9 @@
   "description": "A Node RESTful API built on ES-6, compiled with babel",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel server.js --out-dir build",
+    "test": "mocha --require babel-register src/tests/*.js --exit",
+    "dev-start": "babel-watch server.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
   },
   "homepage": "https://github.com/tolumide-ng/ReflectionsAPI#readme",
   "dependencies": {
+    "babel-register": "^6.26.0",
     "express": "^4.16.4",
     "istanbul": "^0.4.5",
     "moment": "^2.23.0",
