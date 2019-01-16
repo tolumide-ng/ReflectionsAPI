@@ -1,14 +1,13 @@
 import server from '../../server';
-
-const chai = require('chai');
-const chaiHttp = require('chai-http');
+import chai from 'chai';
+import chaiHttp from 'chai-http'
+/* const chai = require('chai');
+const chaiHttp = require('chai-http'); */
 
 chai.use(chaiHttp);
 
 const should = chai.should();
 const expect = chai.expect;
-
-chai.use(chaiHttp);
 
 /* Test for a request to the root of project */
 
