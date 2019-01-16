@@ -4,8 +4,12 @@
   "description": "A Node RESTful API built on ES-6, compiled with babel",
   "main": "server.js",
   "scripts": {
-    "build": "babel server.js --out-dir build",
-    "test": "mocha --require babel-register src/tests/*.js --exit",
+    "start": "npm run build && nodemon dist/server.js",
+    "test": "nyc mocha --require babel-register src/tests/*.js --timeout 10000 --exit",
+    "coverage": "nyc report --reporter lcovonly && cat ./coverage/lcov.info | coveralls",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && mkdir dist && babel server.js src -s -d dist",
+    "production": "npm run build && node bin/production",
     "dev-start": "babel-watch server.js"
   },
   "repository": {
@@ -19,7 +23,7 @@
     "BABEL",
     "ES-6"
   ],
-  "author": "tolumide",
+  "author": "tolumide <https://twitter.com/tolumide_ng>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tolumide-ng/ReflectionsAPI/issues"

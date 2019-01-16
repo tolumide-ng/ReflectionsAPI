@@ -3,5 +3,6 @@ node_modules
 node_modules/
 package-lock.json
 notes
-/build
+/dist
 .nyc_output
+coverage
