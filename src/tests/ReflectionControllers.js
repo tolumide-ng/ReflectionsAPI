@@ -94,8 +94,6 @@ describe('Handle all request to the reflection api controller', () => {
         expect(res).to.have.status(201);
         expect(res).to.be.json;
         const id = res.body.data[0].id;
-        console.log(id);
-        console.log(res.body.data);
 
 
         chai.request('http://localhost:3000')
