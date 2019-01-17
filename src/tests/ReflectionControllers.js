@@ -63,7 +63,7 @@ describe('Handle all request to the reflection api controller', ()=> {
     })
 
     //Test case for a delete request to a non-existing reflection ID
-    /* it('should respond with a 404 Not found status code if ID specified for delete request is not present', (done) => {
+    it('should respond with a 404 Not found status code if ID specified for delete request is not present', (done) => {
         chai.request('http://localhost:3000')
             .delete(`/api/v1/reflections/29589p46092`)
             .set('Accept', 'application/json')
@@ -71,7 +71,7 @@ describe('Handle all request to the reflection api controller', ()=> {
                 expect(res).to.have.status(404);
                 done();
             })
-    }) */
+    })
 
     it('should respond with a 400 request and return json method', (done) => {
         chai.request('http://localhost:3000')
@@ -126,13 +126,13 @@ describe('Handle all request to the reflection api controller', ()=> {
                             res.should.be.an('Object');
                             
                             //test case for a successful delete request i.e. an existing id
-                            /* chai.request('http://localhost:3000')
+                            chai.request('http://localhost:3000')
                                 .delete(`/api/v1/reflections/${id}`)
                                 .set('Accept', 'application/json')
                                 .end((err, res) => {
-                                    expect(res).to.have.status(204); */
+                                    expect(res).to.have.status(204);
                                     done();
-                                /* }) */
+                                })
                         })
                     })
                 /* }) */

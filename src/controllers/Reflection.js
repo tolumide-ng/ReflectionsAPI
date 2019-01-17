@@ -48,7 +48,7 @@ const Reflection = {
         })
     },
 
-    /* delete(req, res) {
+    delete(req, res) {
         const reflection = ReflectionModel.findOne(req.params.id);
         if(!reflection) {
             return res.status(404).json({
@@ -59,7 +59,7 @@ const Reflection = {
         return res.status(204).json({
             data: [ref]
         })
-    } */
+    }
 }
 
 export default Reflection;
