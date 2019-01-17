@@ -28,10 +28,38 @@ const Reflection = {
     getOne(req, res) {
         const reflection = ReflectionModel.findOne(req.params.id);
         if(!reflection ) {
-            return res.status(404).send({'message': 'reflection not found'});
+            return res.status(404).json({'message': 'reflection not found'});
         }
-        return res.status(200).send(reflection);
-    }
+        return res.status(200).json({
+            data: [reflection]
+        });
+    },
+
+    update(req, res) {
+        const reflection = ReflectionModel.findOne(req.params.id);
+        if(!reflection) {
+            return res.status(404).json({
+                message: 'reflection not found'
+            })
+        }
+        const updatedReflection = ReflectionModel.update(req.params.id, req.body);
+        return res.status(200).json({
+            data: [updatedReflection]
+        })
+    },
+
+    /* delete(req, res) {
+        const reflection = ReflectionModel.findOne(req.params.id);
+        if(!reflection) {
+            return res.status(404).json({
+                message: 'Reflection not found'
+            })
+        }
+        const ref = ReflectionModel.delete(req.params.id);
+        return res.status(204).json({
+            data: [ref]
+        })
+    } */
 }
 
 export default Reflection;

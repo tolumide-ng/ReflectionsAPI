@@ -27,6 +27,7 @@ describe('Handle all request to the reflection api controller', ()=> {
         })
     })
 
+    //Search for a specific reflection(specified reflection does not exist)
     it('should respond with a 404 status code if specified id is not found', (done) => {
         chai.request('http://localhost:3000')
         .get('/api/v1/reflections/:id')
@@ -47,6 +48,30 @@ describe('Handle all request to the reflection api controller', ()=> {
                 done();
             })
     })
+
+    //Update a non-existing reflection
+    it('should respond with a 404 Not found status code', (done) => {
+        chai.request('http://localhost:3000')
+            .put(`/api/v1/reflections/29589p46092`)
+            .set('Accept', 'application/json')
+            .send({success: 'Positive', lowPoint: '4', takeAway: 'lessons'})
+            .end((err, res) => {
+                expect(res).to.have.status(404);
+                expect(res).to.be.json;
+                done();
+            })
+    })
+
+    //Test case for a delete request to a non-existing reflection ID
+    /* it('should respond with a 404 Not found status code if ID specified for delete request is not present', (done) => {
+        chai.request('http://localhost:3000')
+            .delete(`/api/v1/reflections/29589p46092`)
+            .set('Accept', 'application/json')
+            .end((err, res) => {
+                expect(res).to.have.status(404);
+                done();
+            })
+    }) */
 
     it('should respond with a 400 request and return json method', (done) => {
         chai.request('http://localhost:3000')
@@ -89,15 +114,32 @@ describe('Handle all request to the reflection api controller', ()=> {
                     .get(`/api/v1/reflections/${id}`)
                     .end((err, res) => {
                         expect(res).to.have.status(200);
-                        done();
+
+                        //Handle a successful PUT (update) request
+                        chai.request('http://localhost:3000')
+                        .put(`/api/v1/reflections/${id}`)
+                        .set('Accept', 'application/json')
+                        .send({success: 'Ramos', lowPoint: '6', takeAway: 'Ovie'})
+                        .end((err, res) => {/* 
+                            expect(res).to.have.property('data'); */
+                            expect(res).to.have.status(200);
+                            res.should.be.an('Object');
+                            
+                            //test case for a successful delete request i.e. an existing id
+                            /* chai.request('http://localhost:3000')
+                                .delete(`/api/v1/reflections/${id}`)
+                                .set('Accept', 'application/json')
+                                .end((err, res) => {
+                                    expect(res).to.have.status(204); */
+                                    done();
+                                /* }) */
+                        })
                     })
                 /* }) */
             })
         })
     })
 
-
-    
 
     
 })
