@@ -1,5 +1,5 @@
-import reflectionControllers from './../controllers/Reflection';
 import express from 'express';
+import reflectionControllers from '../controllers/Reflection';
 
 
 const router = express.Router();

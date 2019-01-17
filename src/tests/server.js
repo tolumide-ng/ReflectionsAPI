@@ -1,6 +1,6 @@
-import server from '../../server';
 import chai from 'chai';
-import chaiHttp from 'chai-http'
+import chaiHttp from 'chai-http';
+import server from '../../server';
 /* const chai = require('chai');
 const chaiHttp = require('chai-http'); */
 
