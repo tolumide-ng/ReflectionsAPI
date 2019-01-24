@@ -1,5 +1,5 @@
 import express from 'express';
-import '@babel/polyfill';
+import 'babel-polyfill';
 import bodyParser from 'body-parser';
 import reflectionRoutes from './Routes/reflectionsRoutes';
 
