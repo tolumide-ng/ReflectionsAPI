@@ -1,8 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import '@babel/polyfill';
-import ReflectionWithJsObject from './../usingJSObject/controllers/Reflection';
-import ReflectionWithDB from './../usingDB/controllers/Reflection';
+import ReflectionWithJsObject from '../usingJSObject/controllers/Reflection';
+import ReflectionWithDB from '../usingDB/controllers/Reflection';
 
 
 dotenv.config();
