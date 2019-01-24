@@ -1,4 +1,4 @@
-import ReflectionModel from '../models/Reflection';
+/* import ReflectionModel from '../models/Reflection';
 
 const Reflection = {
   create(req, res) {
@@ -63,3 +63,4 @@ const Reflection = {
 };
 
 export default Reflection;
+ */
