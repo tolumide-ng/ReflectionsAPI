@@ -9,7 +9,7 @@
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "clean": "rm -rf dist",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "build": "npm run clean && mkdir dist && babel server.js src -s -d dist",
+    "build": "npm run clean && mkdir dist && babel src/server.js src -s -d dist",
     "production": "npm run build && node bin/production",
     "dev-start": "babel-watch server.js"
   },
