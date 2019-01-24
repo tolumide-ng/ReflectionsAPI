@@ -6,3 +6,6 @@ notes
 /dist
 .nyc_output
 coverage
+TODOS
+bash.exe.stackdump
+.env
