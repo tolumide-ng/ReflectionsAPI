@@ -1,5 +1,5 @@
 import chaiHttp from 'chai-http';
-import model from '../usingJSObject/models/Reflection';
+import model from '../usingJSObject/models/Reflection.js';
 
 const { describe, it } = require('mocha');
 const chai = require('chai');
