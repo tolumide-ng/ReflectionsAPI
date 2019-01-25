@@ -1,15 +1,14 @@
-import chai from 'chai';
-import chaiHttp from 'chai-http';
-import server from '../../server';
-/* const chai = require('chai');
-const chaiHttp = require('chai-http'); */
+var chai = require('chai')
+  , chaiHttp = require('chai-http');
 
 chai.use(chaiHttp);
 
-const should = chai.should();
+
+const { describe, it } = require('mocha');
+// const should = chai.should();
 const expect = chai.expect;
 
-/* Test for a request to the root of project */
+// Test for a request to the root of project
 
 describe('/GET request to the localhost', () => {
   it('should respond with 200 status code and have property called message', (done) => {

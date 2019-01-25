@@ -1,10 +1,11 @@
 import chaiHttp from 'chai-http';
-import model from '../models/Reflection';
+import model from '../usingJSObject/models/Reflection.js';
 
+const { describe, it } = require('mocha');
 const chai = require('chai');
 
-chai.use(chaiHttp);/* 
-chai.use(require('chai-match')); */
+chai.use(chaiHttp);
+// chai.use(require('chai-match'));
 
 const should = chai.should();
 const expect = chai.expect;
@@ -50,8 +51,8 @@ describe('handles all requests to the model', () => {
     const createdData = model.create(data);
     createdData;
     const resultOfUpdate = model.update(createdData.id, newData);
-    resultOfUpdate.should.be.an('Object');/*
-        assert(expect(resultOfUpdate.success.to.match(/Rakmid/) || expect(resultOfUpdate.success.to.match(/Yes/)))); */
+    resultOfUpdate.should.be.an('Object');
+    //     assert(expect(resultOfUpdate.success.to.match(/Rakmid/) || expect(resultOfUpdate.success.to.match(/Yes/))));
   });
 
   it('should satisfy a condition described by the function', () => {
@@ -61,9 +62,8 @@ describe('handles all requests to the model', () => {
     const createdData = model.create(data);
     const resultOfUpdate = model.update(createdData.id, newData);
     expect(resultOfUpdate.success).to.satisfy(assurance);
-    /*
-        resultOfUpdate.should.have.property('lowPoint').to.be.a('number');
-        resultOfUpdate.should.have.property('takeAway'); */
+    // resultOfUpdate.should.have.property('lowPoint').to.be.a('number');
+    // resultOfUpdate.should.have.property('takeAway');
   });
 
   it('should return an empty object', () => {
