@@ -1,12 +1,14 @@
 import express from 'express';
-import dotenv from 'dotenv';
+/* import dotenv from 'dotenv'; */
 import '@babel/polyfill';
-import ReflectionWithJsObject from '../usingJSObject/controllers/Reflection';
-import ReflectionWithDB from '../usingDB/controllers/Reflection';
+
+/* import ReflectionWithJsObject from './../usingJSObject/controllers/Reflection'; */
+import ReflectionWithDB from './../usingDB/controllers/Reflection';
 
 
-dotenv.config();
-const reflectionControllers = process.env.TYPE === 'db' ? ReflectionWithDB : ReflectionWithJsObject;
+/* dotenv.config(); */
+/* const reflectionControllers = process.env.TYPE === 'db' ? ReflectionWithDB : ReflectionWithJsObject; */
+const reflectionControllers = ReflectionWithDB;
 const router = express.Router();
 
 router.post('/', reflectionControllers.create);
